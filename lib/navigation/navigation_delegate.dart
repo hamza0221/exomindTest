@@ -1,9 +1,10 @@
 import 'package:exomind_test/navigation/navigation_path.dart';
+import 'package:exomind_test/view_model/weather_viewmodel.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDelegate extends RouterDelegate<NavigationPath>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<NavigationPath>
-    implements BooksRouter {
+    implements WeatherRouter {
   bool? _displayBasket;
   bool? _displayOffer;
   int? _sum;
