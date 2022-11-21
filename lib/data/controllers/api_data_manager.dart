@@ -1,4 +1,4 @@
-import 'package:publicis_test/data/api_module/api_response.dart';
+import 'package:exomind_test/data/api_module/api_response.dart';
 
 class APIDataManager {
   late ApiResponse<Map> _apiResponse;

@@ -1,14 +1,17 @@
 import 'package:exomind_test/Repository/WeatherRepository.dart';
-import 'package:exomind_test/view/weather_screen.dart';
-import 'package:exomind_test/view_model/weather_viewmodel.dart';
+import 'package:exomind_test/view/start_screen.dart';
 
-abstract class HomeRouter {}
+abstract class StartRouter {
+  void displayWeatherScreen(bool val);
+}
 
-abstract class IweatherRepository {}
+class StartViewModel extends IStartViewModel {
+  final StartRouter _startRouter;
 
-class WeatherViewModel extends IWeatherViewModel {
-  final WeatherRouter _weatherRouter;
-  final WeatherRepository _weatherRepo;
+  StartViewModel(this._startRouter);
 
-  WeatherViewModel(this._weatherRepo, this._weatherRouter);
+  @override
+  void displayWeatherScreen(bool val) {
+    _startRouter.displayWeatherScreen(val);
+  }
 }

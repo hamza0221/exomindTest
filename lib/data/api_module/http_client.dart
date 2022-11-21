@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'package:exomind_test/data/api_module/api_exception.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:http/http.dart' as http;
-import 'package:publicis_test/data/api_module/api_exception.dart';
 
 class HttpClient {
   static final HttpClient _singleton = HttpClient();

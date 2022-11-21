@@ -1,9 +1,14 @@
 import 'dart:ui';
+import 'package:exomind_test/model/weather.dart';
 import 'package:exomind_test/utils/project_assets.dart';
 import 'package:exomind_test/utils/project_style.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
-abstract class IWeatherViewModel extends ChangeNotifier {}
+abstract class IWeatherViewModel extends ChangeNotifier {
+  void backHome();
+  Future<Weather> getWeather(double lat, double long);
+}
 
 class WeatherScreen extends StatefulWidget {
   final IWeatherViewModel _viewModel;
@@ -31,36 +36,37 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   Widget myHeader(BuildContext context) {
-    return Stack(children: <Widget>[
-      Image.asset(
-        ProjectAssets.img_home_header,
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height / 5,
-        fit: BoxFit.cover,
-      ),
-      Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height / 5,
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 0.0, sigmaY: 0.0),
-          child: Container(
-            color: Colors.black.withOpacity(0.5),
-          ),
+    return InkWell(
+      onTap: () {
+        widget._viewModel.backHome();
+      },
+      child: const Padding(
+        padding: EdgeInsets.only(left: 20),
+        child: Icon(
+          Icons.arrow_back,
+          size: 30,
+          color: Colors.black,
         ),
       ),
-      Padding(
-          padding: const EdgeInsets.only(top: 50),
-          child: Center(
-              child: Text(
-            "Book now",
-            style: ProjectStyle.headerCategorieTitle,
-            textAlign: TextAlign.right,
-          )))
-    ]);
+    );
   }
 
   Widget pageContent(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;
-    return Container(color: Colors.yellow);
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: LinearPercentIndicator(
+        width: 140.0,
+        lineHeight: 14.0,
+        percent: 0.5,
+        center: Text(
+          "50.0%",
+          style: const TextStyle(fontSize: 12.0),
+        ),
+        linearStrokeCap: LinearStrokeCap.roundAll,
+        backgroundColor: Colors.grey,
+        progressColor: Colors.blue,
+      ),
+    );
   }
 }
