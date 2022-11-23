@@ -1,11 +1,15 @@
+import 'package:exomind_test/model/weather.dart';
+
 class City {
   String? name;
   double? lat;
   double? long;
+  Weather? weather;
 
-  City(this.name, this.lat, this.long);
+  City({this.name, this.lat, this.long});
 
-  City.fromJson(Map<dynamic, dynamic> json) {}
-
-  Map<String, dynamic> toJson() => {"name": name, "lat": lat, "long": long};
+  @override
+  String toString() {
+    return "($name,$lat,$long,$weather)";
+  }
 }
