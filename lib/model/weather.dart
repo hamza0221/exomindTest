@@ -5,11 +5,7 @@ class Weather {
   String? icon;
   String? description;
 
-  Weather({
-    this.temp,
-    this.icon,
-    this.description,
-  });
+  Weather({this.temp, this.icon, this.description});
 
   Weather.fromJson(Map<dynamic, dynamic> json) {
     //converting from Kelvin to Celsius ( -273.15)

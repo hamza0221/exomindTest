@@ -1,7 +1,17 @@
 import 'package:exomind_test/utils/app_colors.dart';
+import 'package:exomind_test/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class ProjectStyle {
+  static TextStyle textPercent = TextStyle(
+      fontSize: getProportionateScreenWidth(18),
+      fontWeight: FontWeight.w600,
+      color: Colors.black);
+  static TextStyle textHome = TextStyle(
+      fontSize: getProportionateScreenWidth(14), color: AppColors.greenButton);
+
+  static const styleblackWeath =
+      TextStyle(fontSize: 21, color: Colors.black, fontWeight: FontWeight.w300);
   static TextStyle headerTitle = const TextStyle(
       fontSize: 30, color: Colors.white, fontWeight: FontWeight.w900);
   static TextStyle headerCategorieTitle = const TextStyle(
@@ -18,8 +28,8 @@ class ProjectStyle {
       fontSize: 11, color: Colors.black, fontWeight: FontWeight.w400);
   static TextStyle bookDescrition = const TextStyle(
       fontSize: 15, color: Color(0xFF1AB350), fontWeight: FontWeight.w800);
-  static TextStyle bookPreview = const TextStyle(
-      fontSize: 12, color: Colors.black, fontWeight: FontWeight.w400);
+  static TextStyle waitText = const TextStyle(
+      fontSize: 13, color: Colors.black, fontWeight: FontWeight.w400);
   static TextStyle bookMetaDataTitle = const TextStyle(
       fontSize: 13, color: Color(0xFF1AB350), fontWeight: FontWeight.w600);
   static TextStyle bookMetaData = const TextStyle(

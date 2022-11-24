@@ -1,0 +1,9 @@
+const weatherStatText = "Welcome to Weather Statistics";
+const seeWeatherText = "See Weather !";
+const seeWeather = "See Weather !";
+const weatherStatistics = "weather statistics";
+const ceclius = "°C";
+const lineBreak = "\n";
+const waitDownload = "Nous téléchargeons les données…";
+const almostFinished = "C’est presque fini…";
+const almostSeconds = "Plus que quelques secondes avant d’avoir le résultat…";

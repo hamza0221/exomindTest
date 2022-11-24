@@ -1,4 +1,3 @@
-import 'package:exomind_test/Repository/WeatherRepository.dart';
 import 'package:exomind_test/view/start_screen.dart';
 
 abstract class StartRouter {

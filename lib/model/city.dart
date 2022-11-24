@@ -6,7 +6,7 @@ class City {
   double? long;
   Weather? weather;
 
-  City({this.name, this.lat, this.long});
+  City({this.name, this.lat, this.long, this.weather});
 
   @override
   String toString() {
